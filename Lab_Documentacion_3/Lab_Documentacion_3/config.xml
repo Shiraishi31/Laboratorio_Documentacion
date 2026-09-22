@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ARCHIVO DE CONFIGURACION EXTERNO - Lab_Documentacion_3
+
+  Ningun valor de negocio esta "quemado" en el codigo fuente.
+  Si cambian las reglas (salario minimo, longitud de clave, etc.)
+  solo se edita este archivo: NO hay que recompilar la aplicacion.
+  Esto favorece la Portabilidad y la Mantenibilidad (ISO/IEC 25010).
+-->
+<configuracion>
+
+  <!-- Parametros generales de la aplicacion -->
+  <aplicacion>
+    <parametro clave="TituloApp"        valor="Lab_Documentacion_3 - Calidad y Seguridad" />
+    <parametro clave="Universidad"      valor="Universidad Tecnologica de Panama - FISC" />
+    <parametro clave="Version"          valor="1.0.0" />
+    <parametro clave="Autor"            valor="Estudiante FISC" />
+  </aplicacion>
+
+  <!-- Reglas de validacion leidas en tiempo de ejecucion -->
+  <validaciones>
+    <parametro clave="SalarioMinimo"        valor="325.00" />
+    <parametro clave="SalarioMaximo"        valor="9500.00" />
+    <parametro clave="EdadMinima"           valor="18" />
+    <parametro clave="EdadMaxima"           valor="70" />
+    <parametro clave="LongitudMinimaClave"  valor="8" />
+    <parametro clave="LongitudMaximaClave"  valor="20" />
+    <parametro clave="MaximoIntentos"       valor="3" />
+    <parametro clave="PatronCorreo"         valor="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" />
+    <parametro clave="PatronCedula"         valor="^\d{1,2}-\d{1,4}-\d{1,6}$" />
+    <parametro clave="PatronNombre"         valor="^[\p{L} ]{3,40}$" />
+  </validaciones>
+
+  <!-- Lista de valores permitidos (whitelist) -->
+  <departamentos>
+    <departamento>Sistemas</departamento>
+    <departamento>Recursos Humanos</departamento>
+    <departamento>Contabilidad</departamento>
+    <departamento>Operaciones</departamento>
+    <departamento>Mercadeo</departamento>
+  </departamentos>
+
+  <!-- Patrones peligrosos: se rechazan en cualquier entrada de texto -->
+  <seguridad>
+    <patronPeligroso>--</patronPeligroso>
+    <patronPeligroso>;</patronPeligroso>
+    <patronPeligroso>'</patronPeligroso>
+    <patronPeligroso>/*</patronPeligroso>
+    <patronPeligroso>*/</patronPeligroso>
+    <patronPeligroso>xp_</patronPeligroso>
+    <patronPeligroso>DROP </patronPeligroso>
+    <patronPeligroso>DELETE </patronPeligroso>
+    <patronPeligroso>INSERT </patronPeligroso>
+    <patronPeligroso>UPDATE </patronPeligroso>
+    <patronPeligroso>SELECT </patronPeligroso>
+    <patronPeligroso>UNION</patronPeligroso>
+    <patronPeligroso>OR 1=1</patronPeligroso>
+    <patronPeligroso>&lt;script</patronPeligroso>
+  </seguridad>
+
+</configuracion>

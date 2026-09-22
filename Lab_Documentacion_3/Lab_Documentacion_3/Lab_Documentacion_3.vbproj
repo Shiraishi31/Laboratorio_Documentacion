@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Lab_Documentacion_3</RootNamespace>
+    <AssemblyName>Lab_Documentacion_3</AssemblyName>
+    <StartupObject>Lab_Documentacion_3.Program</StartupObject>
+    <MyType>Windows</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- El archivo de configuracion externo se copia junto al .exe -->
+    <None Update="config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
